@@ -34,3 +34,36 @@ function as first-class citizen, immutability, no side-effect
 코틀린 컴파일러 (kt → class → jar) 로 컴파일 한 코드는 kotlin runtime library 에 의존한다. 
 
 빌드 툴 (maven, gradle) 과 호환된다.
+
+
+
+### 1.5.1 코틀린 코드 컴파일
+## Java
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/007192e6-e2c0-4b53-9970-9eec68b89139/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/84d2d406-87c1-4f73-ae99-fdb09131beef/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063b862-cd8e-4eea-a306-09cd70eba743/Untitled.png)
+
+```bash
+java --version
+openjdk 17.0.5 2022-10-18
+OpenJDK Runtime Environment (build 17.0.5+8-Ubuntu-2ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 17.0.5+8-Ubuntu-2ubuntu122.04, mixed mode, sharing)
+```
+
+---
+
+```bash
+Archive:  Hello.jar
+Length      Date    Time    Name
+    0  2023-02-05 12:29   META-INF/
+   61  2023-02-05 12:29   META-INF/MANIFEST.MF
+  401  2023-02-05 12:20   Hello.class
+  462                     3 files
+```
+
+---
+
+### Kotlin
