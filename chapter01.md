@@ -38,12 +38,11 @@ function as first-class citizen, immutability, no side-effect
 
 
 ### 1.5.1 코틀린 코드 컴파일
-## Java
-![image](https://user-images.githubusercontent.com/59631871/216801039-6f6c2dd5-0736-4151-8cb8-d67f53b4b9f5.png)
-![image](https://user-images.githubusercontent.com/59631871/216801043-ea9e16a3-4d27-40d1-85e5-6cdb8f3bb271.png)
-![image](https://user-images.githubusercontent.com/59631871/216801044-ef620468-a854-42b5-b718-5f59084b515c.png)
-![image](https://user-images.githubusercontent.com/59631871/216801050-8a0d93aa-e872-46f2-b6b9-28507c92cbd8.png)
 
+코틀린은 컴파일 시 자바와 같이 class 파일을 만들어내고, 여기에 kotlin runtime library 를 추가로 포함하여 jar 를 패키징해서 배포한다.
+
+## Java
+![image](https://user-images.githubusercontent.com/59631871/216801099-8b084d76-411d-4778-a212-f833238e079c.png)
 
 ```bash
 java --version
@@ -55,6 +54,9 @@ OpenJDK 64-Bit Server VM (build 17.0.5+8-Ubuntu-2ubuntu122.04, mixed mode, shari
 ---
 
 ```bash
+javac Hello.class
+jar Hello.jar Hello.class
+
 Archive:  Hello.jar
 Length      Date    Time    Name
     0  2023-02-05 12:29   META-INF/
@@ -66,3 +68,25 @@ Length      Date    Time    Name
 ---
 
 ### Kotlin
+![image](https://user-images.githubusercontent.com/59631871/216801050-8a0d93aa-e872-46f2-b6b9-28507c92cbd8.png) 
+
+
+```bash
+kotlinc Hello.kt -include-runtime -d HelloKt.jar
+
+jar tf HelloKt.jar | head -10
+META-INF/MANIFEST.MF
+HelloKt.class
+META-INF/main.kotlin_module
+kotlin/ArrayIntrinsicsKt.class
+kotlin/BuilderInference.class
+kotlin/Deprecated.class
+kotlin/DeprecationLevel.class
+kotlin/DslMarker.class
+kotlin/ExceptionsKt.class
+kotlin/ExceptionsKt__ExceptionsKt.class
+```
+
+
+
+
