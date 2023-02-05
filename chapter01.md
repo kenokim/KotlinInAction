@@ -39,12 +39,11 @@ function as first-class citizen, immutability, no side-effect
 
 ### 1.5.1 코틀린 코드 컴파일
 ## Java
+![image](https://user-images.githubusercontent.com/59631871/216801039-6f6c2dd5-0736-4151-8cb8-d67f53b4b9f5.png)
+![image](https://user-images.githubusercontent.com/59631871/216801043-ea9e16a3-4d27-40d1-85e5-6cdb8f3bb271.png)
+![image](https://user-images.githubusercontent.com/59631871/216801044-ef620468-a854-42b5-b718-5f59084b515c.png)
+![image](https://user-images.githubusercontent.com/59631871/216801050-8a0d93aa-e872-46f2-b6b9-28507c92cbd8.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/007192e6-e2c0-4b53-9970-9eec68b89139/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/84d2d406-87c1-4f73-ae99-fdb09131beef/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063b862-cd8e-4eea-a306-09cd70eba743/Untitled.png)
 
 ```bash
 java --version
