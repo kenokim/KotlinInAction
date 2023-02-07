@@ -47,6 +47,8 @@ enum 은 class 앞에 있을 때만 keyword 로 작용한다. (soft keyword)
 
 class 는 keyword 이므로 변수로 사용할 수 없다.
 
+enum 클래스 안에 프로퍼티, 메소드를 정의할 수 있다. 자바와 마찬가지로 완전한 형태의 클래스이다.
+
 ```kotlin
 enum class Color (
 	val r: Int, val g: Int, val b: Int
