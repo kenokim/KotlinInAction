@@ -27,3 +27,20 @@ fun <T> joinToString (
 	return result.toString()
 }
 ```
+
+코틀린으로 작성한 함수는 인자를 명시할 수 있다.
+
+```kotlin
+joinToString(list, separator = " ", prefix = " ", postfix = ".")
+```
+
+자바에서는 오버로딩을 통해 메소드를 다양하게 만드는데, 예를 들어 telescoping constructor pattern, 코틀린에서는 디폴트 값을 지정해 이렇게 안해도 된다.
+
+```kotlin
+fun <T> joinToString(
+	collection: Collection<T>,
+	separator: String = ", ",
+	prefix: String = "",
+	postfix: String = ""
+): String
+```
