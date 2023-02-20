@@ -137,6 +137,8 @@ fun TalkativeButton.giveSpeech() { // error
 
 (4). inner class & nested class
 
+클래스 안에 다른 클래스를 선언하면 도우미 클래스를 encapsulate 하거나 코드 정의를 그 코드를 사용하는 곳 가까이에 두고 싶을 때 유용하다.
+
 ```kotlin
 interface State : Serializable
 interface View {
