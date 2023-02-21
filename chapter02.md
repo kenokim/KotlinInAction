@@ -130,7 +130,19 @@ in 을 통해 element 가 collection 에 있는지 알 수 있다.
 fun isLetter(c: Char) = c in 'a'..'z'
 ```
 
+맵에 대해서도 이터레이션을 할 수 있다.
+
+```kotlin
+for ((letter, binary) in binaryReps) {
+	println("$letter = $binary")
+}
+```
+
 ### 5. try, catch, finally
+
+이펙티브 자바: 복구할 수 있는 상황에는 체크 예외를, 프로그래밍 오류에는 런타임 예외를 사용하라.
+
+→ retryable 등 복구 로직 작성하는 코드
 
 ```kotlin
 fun readNumber(reader: BufferedReader): Int? {
@@ -147,4 +159,44 @@ fun readNumber(reader: BufferedReader): Int? {
 }
 ```
 
-코틀린은 체크 예외여도 함수에 선언하지 않아도 된다.
+코틀린은 체크 예외여도 함수에 선언하지 않아도 된다. 자바와 다르게 체크 예외 처리를 강제하지 않는다. 자바 클라이언트와의 interoperability 를 위해 @Throws 어노테이션을 제공한다.
+
+```kotlin
+class ExceptionExample {
+    fun ex1() {
+        throw IOException()
+    }
+
+		@Throws(IOException.class)
+		fun ex2() = throw IOException()
+}
+
+public void method1() {
+        ExceptionExample ex = new ExceptionExample();
+        try {
+            ex.ex1();
+        } catch (IOException e) { // 컴파일 에러 발생
+
+        }
+    }
+}
+```
+
+자바와 다르게 코틀린의 throw 은 expression 이다.
+
+```kotlin
+val percentage = throw IllegalStateException("..")
+```
+
+try catch finally 는 expression 이다. 예를 들어 null 이 리턴되고 println(”hello”) 가 찍힌다.
+
+```kotlin
+fun tryCatch() = try {
+        throw Exception()
+    } catch (e: Exception) {
+        null
+    } finally {
+        "Hello"
+        println("hello")
+    }
+```
