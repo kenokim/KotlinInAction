@@ -100,3 +100,25 @@ Util 클래스를 없애고 함수로 선언할 수 있다. 자바로 변환하�
 확장 함수는 클래스 . 메소드 식으로 정의하며, this 를 생략해서 클래스의 메소드를 가져올 수 있다.
 
 private, protected 에 대한 접근이 제한되어 캡슐화를 지킨다.
+
+```kotlin
+fun <T> Collection<T>.joinToString(
+    separator: String = ", ",
+    prefix: String = "",
+    postfix: String = ""
+): String {
+    val result = StringBuilder(prefix)
+    for ((index, element) in this.withIndex()) {
+        if (index > 0) result.append(separator)
+        result.append(element)
+    }
+    result.append(postfix)
+    return result.toString()
+}
+```
+
+확장 함수는 static method 에 대한 syntatic sugar 이다.
+
+그냥 static method 이고 Collection 을 parameter 로 받는다. 따라서 클래스 안에 있는 method 처럼 override 도 할 수 없다.
+
+커스텀 프로퍼티도 정의할 수 있다.
