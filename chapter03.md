@@ -122,3 +122,11 @@ fun <T> Collection<T>.joinToString(
 그냥 static method 이고 Collection 을 parameter 로 받는다. 따라서 클래스 안에 있는 method 처럼 override 도 할 수 없다.
 
 커스텀 프로퍼티도 정의할 수 있다.
+
+### 4. 컬렉션 처리 : 가변 길이 인자, 중위 함수 호출, 라이브러리 지원
+
+vararg, infix, destructing declaration
+
+vararg 는 자바의 … 과 같은 keyword 이다.
+
+infix call 은 parameter 가 하나일 때, 1.to(”one”) 을 1 to “one” 으로 표현하여 가독성을 좋게 한다.
