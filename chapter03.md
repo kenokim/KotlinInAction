@@ -125,8 +125,50 @@ fun <T> Collection<T>.joinToString(
 
 ### 4. 컬렉션 처리 : 가변 길이 인자, 중위 함수 호출, 라이브러리 지원
 
-vararg, infix, destructing declaration
+vararg, infix, destructuring declaration
 
 vararg 는 자바의 … 과 같은 keyword 이다.
 
 infix call 은 parameter 가 하나일 때, 1.to(”one”) 을 1 to “one” 으로 표현하여 가독성을 좋게 한다.
+
+```kotlin
+val map = mapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
+
+infix fun Any.to(other: Any) = Pair(this, other)
+
+// destructuring declaration
+val (number, name) = 1 to "one"
+
+fun <K, V> mapOf(vararg values: Pair<K, V>): Map<K, V>
+```
+
+### 5. String & Regular expression
+
+Java 의 split 함수는 regex 를 String type 의 parameter 로 받는다.
+
+Kotlin 은 regex 받으려면 Regex type 를 parameter 로 값는다.
+
+따라서, 기존의 String type 로 regex 를 받아 헷갈리던 것을 개선하였다.
+
+```kotlin
+fun parsePath(path: String) {
+    val directory = path.substringBeforeLast("/")
+    val fullName = path.substringAfterLast("/")
+    val fileName = fullName.substringBeforeLast(".")
+    val extension = fullName.substringAfterLast(".")
+		println("Dir: $directory, name: $fileName, ext: $extension")
+}
+
+fun parsePathRegex(path: String) {
+    val regex = """(.+)/(.+)\.(.+)""".toRegex()
+    val matchResult = regex.matchEntire(path)
+    if (matchResult != null) {
+        val (directory, filename, extension) = matchResult.destructured
+				println("Dir: $directory, name: $filename, ext: $extension")
+    }
+}
+```
+
+### 6. 로컬 함수
+
+로컬 함수 기능을 통해 코드의 중복을 줄일 수 있다.
