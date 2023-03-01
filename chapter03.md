@@ -147,8 +147,7 @@ fun <K, V> mapOf(vararg values: Pair<K, V>): Map<K, V>
 Java 의 split 함수는 regex 를 String type 의 parameter 로 받는다.
 
 Kotlin 은 regex 받으려면 Regex type 를 parameter 로 값는다.
-
-따라서, 기존의 String type 로 regex 를 받아 헷갈리던 것을 개선하였다.
+- String 을 parameter 로 주거나, String.toRegex() 를 줄 수 있따.
 
 ```kotlin
 fun parsePath(path: String) {
