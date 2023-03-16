@@ -21,3 +21,6 @@ open class UserOpen(val nickname: String) {
 class TwitterUser(nickname: String) : UserOpen(nickname) {
 
 }
+
+class Selective private constructor() {}
+
