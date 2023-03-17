@@ -87,7 +87,7 @@ fun eval(e: Expr): Int =
 	}
 ```
 
-
+default 를 when 에서 처리하지 않아도 되는 기능이다.
 
 ### 1. 클래스 계층 정의
 
