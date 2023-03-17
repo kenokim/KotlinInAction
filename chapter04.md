@@ -104,6 +104,12 @@ class Button : Clickable {
 }
 ```
 
+(2), (3). Access modifiers 접근 제한자
+
+- The defaults are different
+
+
+
 (2). open, final, abstract modifier
 
 ```kotlin
@@ -134,6 +140,10 @@ fun TalkativeButton.giveSpeech() { // error
 	whisper() // error
 }
 ```
+
+internal 은 같은 모듈 안에서 허용된다.
+
+자바는 package-private (default), private, public, protected 인데 internal 에 해당하는 키워드가 없다. 
 
 (4). inner class & nested class
 
