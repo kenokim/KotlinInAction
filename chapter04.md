@@ -252,6 +252,8 @@ class MyButton : View {
 
 (3). Implementing properties declared at interface
 
+인터페이스에 추상 프로퍼티를 declare 하고 클래스로 구현할 수 있다.
+
 ```kotlin
 interface User {
 	val nickname: String
