@@ -234,6 +234,14 @@ class TwitterUser(nickname: String) : User(nickname) {}
 
 생성자를 정의하지 않으면 컴파일러가 default constructor 를 만들어준다.
 
+super 키워드를 통해 base 클래스의 생성자를 호출할 수 있다.
+
+클래스를 extends 할 경우 괄호가 필수이고, 인터페이스를 implement 할 경우 괄호가 없다.
+
+싱글턴을 사용하고 싶을 때는 object 키워드를 통해 객체를 선언하면 된다.
+
+
+
 (2). Secondary constructor
 
 코틀린은 자바의 overloaded constructor 를 default parameter 값과 named parameter 를 통해 대다수 대체할 수 있다.
