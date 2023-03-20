@@ -221,6 +221,8 @@ class User(_nickname: String) {
 }
 ```
 
+디폴트 파라미터를 통해 파라미터 없는 생성자를 만들 수 있다.
+
 클래스의 인스턴스를 만드려면 new 키워드 없이 constructor 를 직접 호출하면 된다.
 
 Base class 가 있다면 괄호를 치고 parameter 를 넘긴다.
