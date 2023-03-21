@@ -264,6 +264,8 @@ class MyButton : View {
 
 인터페이스에 추상 프로퍼티를 declare 하고 클래스로 구현할 수 있다.
 
+자바에서 인터페이스에 선언된 변수는 static final 이다.
+
 ```kotlin
 interface User {
 	val nickname: String
