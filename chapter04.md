@@ -288,3 +288,13 @@ interface User {
 		get() = email.substringBefore('@')
 }
 ```
+
+### 3. 데이터 클래스와 클래스 delegation
+
+코틀린의 == 는 객체의 동등성을 체크한다.
+
+JVM 언어에서는 equals 가 true 를 반환하는 두 객체는 반드시 같은 hashCode 를 반환해야 하는 제약이 있다.
+
+롬복 @Data 는 get/set, @ToString, @EqualsAndHashCode, @RequiredArgsConstructor 를, 코틀린 data class 는 toString, equals, hashCode, copy 를 제공한다. 프로퍼티를 생성자에 선언을 해서 get/set, constructor 도 제공된다고 볼 수 있다.
+
+
