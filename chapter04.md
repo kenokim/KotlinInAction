@@ -298,3 +298,7 @@ JVM 언어에서는 equals 가 true 를 반환하는 두 객체는 반드시 같
 롬복 @Data 는 get/set, @ToString, @EqualsAndHashCode, @RequiredArgsConstructor 를, 코틀린 data class 는 toString, equals, hashCode, copy 를 제공한다. 프로퍼티를 생성자에 선언을 해서 get/set, constructor 도 제공된다고 볼 수 있다.
 
 
+
+### 4. object 키워드: 클래스 선언과 인스턴스 생성
+
+object 키워드는 클래스를 선언함과 동시에 인스턴스를 생성한다.
