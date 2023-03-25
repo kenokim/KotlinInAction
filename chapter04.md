@@ -297,6 +297,30 @@ JVM 언어에서는 equals 가 true 를 반환하는 두 객체는 반드시 같
 
 롬복 @Data 는 get/set, @ToString, @EqualsAndHashCode, @RequiredArgsConstructor 를, 코틀린 data class 는 toString, equals, hashCode, copy 를 제공한다. 프로퍼티를 생성자에 선언을 해서 get/set, constructor 도 제공된다고 볼 수 있다.
 
+객체지향 시스템에서 상속에 의해 시스템 취약점이 발생한다. Decorator pattern 을 통해 이를 해결할 수 있다. 코틀린에서는 by 키워드를 제공한다.
+
+```kotlin
+class DelegatingCollection<T>: Collection<T> {
+	private val innerList = arrayListOf<T>()
+
+	override val size: Int get() = innerList.size
+}
+
+class DelegatingCollection<T>: Collection<T> {
+    private val innerList = arrayListOf<T>()
+    override val size: Int = innerList.size
+    override fun isEmpty(): Boolean = innerList.isEmpty()
+    override fun iterator(): Iterator<T> = innerList.iterator()
+    override fun containsAll(elements: Collection<T>): Boolean = innerList.containsAll(elements)
+    override fun contains(element: T): Boolean = innerList.contains(element)
+
+}
+
+class CountingSet<T>(val innerSet: MutableCollection<T> = HashSet<T>())
+    : MutableCollection<T> by innerSet {
+        
+    }
+```
 
 
 ### 4. object 키워드: 클래스 선언과 인스턴스 생성
