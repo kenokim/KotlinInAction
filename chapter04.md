@@ -326,3 +326,5 @@ class CountingSet<T>(val innerSet: MutableCollection<T> = HashSet<T>())
 ### 4. object 키워드: 클래스 선언과 인스턴스 생성
 
 object 키워드는 클래스를 선언함과 동시에 인스턴스를 생성한다.
+
+싱글톤 생성, companion object, anonymous inner class 등에 쓸 수 있다.
