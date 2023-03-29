@@ -328,3 +328,30 @@ class CountingSet<T>(val innerSet: MutableCollection<T> = HashSet<T>())
 object 키워드는 클래스를 선언함과 동시에 인스턴스를 생성한다.
 
 싱글톤 생성, companion object, anonymous inner class 등에 쓸 수 있다.
+
+```kotlin
+object Payroll {
+    val allEmployees = arrayListOf<Person>()
+
+    fun calculateSalary() {
+        for (person in allEmployees) {
+
+        }
+    }
+}
+
+
+
+object CaseInsensitiveFileComparator : Comparator<File> {
+    override fun compare(o1: File?, o2: File?): Int {
+    }
+}
+
+data class Persion(val name: String) {
+    object NameComparator : Comparator<Persion> {
+        override fun compare(o1: Persion?, o2: Persion?): Int {
+        }
+
+    }
+}
+```
