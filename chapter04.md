@@ -355,3 +355,20 @@ data class Persion(val name: String) {
     }
 }
 ```
+
+(2). companion object
+
+코틀린은 static keyword 를 지원하지 않는다. 최상위 함수 또는 object 를 통해 이를 대신하고, private 멤버에 접근해야 하는 경우에는 nested companion object 를 통해 해결한다.
+
+예를 들어, static factory method 를 구현하고자 할 때 nested companion object 를 사용할 수 있다.
+
+```kotlin
+class Users private constructor(val nickname: String) {
+    companion object {
+        fun newSubscribingUser(email: String) = Users(email)
+        }
+    }
+}
+```
+
+
