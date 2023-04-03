@@ -327,7 +327,7 @@ class CountingSet<T>(val innerSet: MutableCollection<T> = HashSet<T>())
 
 object 키워드는 클래스를 선언함과 동시에 인스턴스를 생성한다.
 
-싱글톤 생성, companion object, anonymous inner class 등에 쓸 수 있다.
+싱글톤 생성, companion object, anonymous inner class 등에 쓸 수 있다. 생성자를 정의할 수 없고 property, inheritance 등을 할 수 있다.
 
 ```kotlin
 object Payroll {
@@ -370,5 +370,9 @@ class Users private constructor(val nickname: String) {
     }
 }
 ```
+
+companion object 는 둘러싼 클래스의 private member 에 접근할 수 있고 외부에서 메소드 호출 시 둘러싼 클래스를 콜한다.
+
+companion object 도 이름을 붙일 수 있고 기본은 Companion 이다.
 
 
