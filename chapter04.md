@@ -375,4 +375,31 @@ companion object 는 둘러싼 클래스의 private member 에 접근할 수 있
 
 companion object 도 이름을 붙일 수 있고 기본은 Companion 이다.
 
+class Person(val name: String) {
+    companion object Loader {
+        fun fromJSON(jsonText: String): Person = TODO()
+    }
+}
 
+fun main() {
+    val person = Person.fromJSON("")
+}
+
+class User private constructor(val nickname: String) {
+    companion object {
+        fun newSubscribingUser(email: String) = User(email.substringBefore('@'))
+        fun newFacebookUser(accountId: Int) = User(getFacebookName(accountId))
+
+        private fun getFacebookName(accountId: Int): String = TODO()
+    }
+}
+
+interface JSONFactory<T> {
+    fun fromJSON(jsonText: String): T
+}
+
+class Person2(val name: String) {
+    companion object : JSONFactory<Person2> {
+        override fun fromJSON(jsonText: String): Person2 = TODO("Not yet implemented")
+    }
+}
