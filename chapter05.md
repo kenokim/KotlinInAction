@@ -20,3 +20,15 @@ people.maxBy { p: Person -> p.age }
 파라미터가 한 개에고 타입 추론이 가능할 경우 it 으로 대체할 수 있다.
 
 람다는 컬렉션 라이브러리 제공에 필요하다.
+
+### Chapter 5.2 컬렉션 함수형 API
+
+함수형 프로그래밍 스타일을 사용하면 컬렉션을 다룰 때 편리하다.
+
+코틀린 표준 컬렉션 라이브러리를 통해 이를 살펴보자.
+
+1. filter, map
+
+filter 는 Predicate 를, map 은 Function 을 파라미터로 갖는 함수이다.
+
+2. all, any, count, find
