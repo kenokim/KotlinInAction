@@ -14,6 +14,8 @@ people.maxBy(Person::age)
 people.maxBy { p: Person -> p.age }
 ```
 
+람다는 수학에서 함수를 편리하게 표현하기 위한 람다 표현식에서 가져왔다.
+
 
 람다 식은 파라미터 -> 본문 으로 구성되어 있다.
 
