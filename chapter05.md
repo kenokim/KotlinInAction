@@ -34,3 +34,11 @@ people.maxBy { p: Person -> p.age }
 filter 는 Predicate 를, map 은 Function 을 파라미터로 갖는 함수이다.
 
 2. all, any, count, find
+
+
+### 3. 시퀀스 연산 실행
+
+시퀀스 연산은 중간 연산과 최종 연산이 있다.
+
+코틀린 시퀀스는 자바 스트림과 같다. 
+
