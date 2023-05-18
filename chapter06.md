@@ -11,3 +11,9 @@ fun strLen(s: String) = s.length
 자바는 완전하게 컴파일 타임에 NPE 를 방지할 방법이 없다.
 
 코틀린의 ?. 연산자는 이러한 문제를 해결해 준다.
+
+?. 연산자는 return if (… ≠ null) { … } else null 과 같은 메소드다.
+
+?: 연산자는 return if (… ≠ null) { … } else … 과 같은 메소드다.
+
+as? 연산자는 foo is Type 일 경우 foo as Type 을, 아닐 경우 null 을 리턴한다.
