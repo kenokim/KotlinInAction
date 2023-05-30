@@ -17,3 +17,15 @@ fun strLen(s: String) = s.length
 ?: 연산자는 return if (… ≠ null) { … } else … 과 같은 메소드다.
 
 as? 연산자는 foo is Type 일 경우 foo as Type 을, 아닐 경우 null 을 리턴한다.
+
+!! 연산자는 return if (... != null) { ... } else NPE 과 같이 예외를 리턴한다.
+
+let 함수는 null 이 아닌 경우에만 뒤의 람다를 실행한다.
+
+```kotlin
+email?.let { sendEmailTo(it) }
+```
+
+lateinit 변경자는 나중에 초기화를 할 수 있다. 초기화 전에 접근할 경우 exception 이 발생한다.
+
+코틀린의 nullable 은 자바의 @Nullable 타입과 비슷하다.
