@@ -69,3 +69,26 @@ Collection, MutableCollection: read 와 write 를 분리하고, write 가 read �
 적시에 방어적 복사본을 만들라, 클라이언트로 반환하는 구성요소가 mutable 하다면 방어적으로 복사해야 한다.
 
 Collection 이 thread safe 하다는 뜻이 아니다. Collection 은 MutableCollection 의 super class 이므로 thread safe 가 보장되지 않는다.
+
+
+코틀린은 자바의 List 등은 Mutable list 를 상속한 것 처럼 취급한다.
+
+코틀린의 Collection / MutableCollection 은 자바의 Collection 으로 변환되므로, 변경 가능할 수 있다. 따라서 코드를 작성할 때 조심해야 한다.
+
+코틀린 Array 는 JVM array 를 생성하며 arrayOf, arrayOfNulls, emptyArray 로 생성할 수 있다.
+
+```kotlin
+fun main(args: Array<String>) {
+	for (i in args.indices) {
+		... args[i]
+	}
+}
+```
+
+코틀린 array 의 타입 파라미터는 항상 객체 타입이다. Primitive array 는 별도의 클래스로 제공한다.
+
+코틀린에서 primitive array 를 만드는 방법은 다음과 같다.
+
+1. val fiveZeros = IntArray(5)
+2. val fiveZerosToo = intArrayOf(0,0,0,0,0)
+3. val squares = IntArray(5) { i → i + 1 }
