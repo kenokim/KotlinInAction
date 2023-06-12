@@ -60,3 +60,12 @@ Any 타입은 Object 와 대입되는데, wait / notify 등의 함수가 없다.
        return null; // appeasing the compiler: this line will never be executed.
     }
     ```
+
+
+### Chapter 6.3 컬렉션과 배열
+
+Collection, MutableCollection: read 와 write 를 분리하고, write 가 read 를 의존하도록 한다.
+
+적시에 방어적 복사본을 만들라, 클라이언트로 반환하는 구성요소가 mutable 하다면 방어적으로 복사해야 한다.
+
+Collection 이 thread safe 하다는 뜻이 아니다. Collection 은 MutableCollection 의 super class 이므로 thread safe 가 보장되지 않는다.
