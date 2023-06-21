@@ -35,3 +35,5 @@ try-with resources 에서 AutoCloseable 을 구현한 객체를 사용할 수 �
         }
     }
 ```
+
+코틀린은 함수 이름을 통한 관례에 의존한다.
